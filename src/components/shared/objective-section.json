@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_objective_sections",
+  "info": {
+    "displayName": "ObjectiveSection",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "objective1Title": {
+      "type": "string"
+    },
+    "objective1SubText": {
+      "type": "string"
+    },
+    "objective2Title": {
+      "type": "string"
+    },
+    "objective2SubText": {
+      "type": "string"
+    },
+    "objective3Title": {
+      "type": "string"
+    },
+    "objective3SubText": {
+      "type": "string"
+    }
+  }
+}

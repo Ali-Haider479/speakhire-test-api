@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_partner_components",
+  "info": {
+    "displayName": "partnerComponent",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "companyLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

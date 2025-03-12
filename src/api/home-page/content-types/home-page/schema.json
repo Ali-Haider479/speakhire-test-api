@@ -1,0 +1,99 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "HomePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroSubTitle1": {
+      "type": "string"
+    },
+    "heroSubTitle2": {
+      "type": "text"
+    },
+    "heroSubTitle3": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroButtonText": {
+      "type": "string"
+    },
+    "heroCoverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "objectiveSubtext1": {
+      "type": "string"
+    },
+    "countriesRepresentText": {
+      "type": "text"
+    },
+    "countriesRepresentNo": {
+      "type": "string"
+    },
+    "careerImpactedNo": {
+      "type": "string"
+    },
+    "careerImpactedText": {
+      "type": "text"
+    },
+    "internshipProvidedNo": {
+      "type": "string"
+    },
+    "internShipProvidedText": {
+      "type": "text"
+    },
+    "studentPreparedPercentage": {
+      "type": "string"
+    },
+    "studentPreparedText": {
+      "type": "text"
+    },
+    "objectiveSubtext2": {
+      "type": "text"
+    },
+    "impactLivesTitleSubtext1": {
+      "type": "string"
+    },
+    "impactLivesTitleSubtext2": {
+      "type": "string"
+    },
+    "impactLivesTitleSubtext3": {
+      "type": "string"
+    },
+    "impactLivesDescription": {
+      "type": "text"
+    },
+    "impactLivesVideoLink1": {
+      "type": "string"
+    },
+    "impactLivesVideoLink2": {
+      "type": "string"
+    },
+    "impactLivesVideoLink3": {
+      "type": "string"
+    },
+    "objectiveSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.objective-section"
+    },
+    "partnerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.partner-component"
+    }
+  }
+}
