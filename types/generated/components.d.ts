@@ -1,57 +1,116 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_buttons';
   info: {
-    displayName: 'Media';
-    icon: 'file-video';
+    displayName: 'Button';
+    icon: 'cursor';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    inner_text: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero_sections';
+  info: {
+    description: '';
+    displayName: 'HeroSection';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_images';
+  info: {
+    displayName: 'Image';
+    icon: 'picture';
+  };
+  attributes: {
+    alternate_text: Schema.Attribute.String;
+    aria_description: Schema.Attribute.String;
+    source: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedImpactLivesSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_impact_lives_sections';
+  info: {
+    description: '';
+    displayName: 'impactLivesSection';
+    icon: 'dashboard';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    links: Schema.Attribute.Relation<'oneToMany', 'api::link.link'>;
+    title: Schema.Attribute.String;
   };
 }
 
 export interface SharedObjectiveSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_objective_sections';
   info: {
-    displayName: 'ObjectiveSection';
-    icon: 'bulletList';
+    description: '';
+    displayName: 'objective-section';
+    icon: 'apps';
   };
   attributes: {
-    objective1SubText: Schema.Attribute.String;
-    objective1Title: Schema.Attribute.String;
-    objective2SubText: Schema.Attribute.String;
-    objective2Title: Schema.Attribute.String;
-    objective3SubText: Schema.Attribute.String;
-    objective3Title: Schema.Attribute.String;
+    objectives: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::objective.objective'
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
 export interface SharedPartnerComponent extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_components';
   info: {
-    displayName: 'partnerComponent';
+    description: '';
+    displayName: 'partnerInfoComponent';
     icon: 'apps';
   };
   attributes: {
-    company: Schema.Attribute.String;
-    companyLogo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    description: Schema.Attribute.Text;
-    designation: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    partner_logos: Schema.Attribute.Component<'shared.image', true>;
     title: Schema.Attribute.String;
   };
 }
 
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+export interface SharedPartnerTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_partner_testimonials';
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    displayName: 'PartnerTestimonial';
+    icon: 'apps';
   };
   attributes: {
-    body: Schema.Attribute.Text;
+    description: Schema.Attribute.String;
+    designation: Schema.Attribute.String;
+    institute_name: Schema.Attribute.String;
+    instituteLogo: Schema.Attribute.Component<'shared.image', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPartnersTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_shared_partners_testimonials';
+  info: {
+    description: '';
+    displayName: 'PartnersTestimonials';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    partner_testimonial: Schema.Attribute.Component<
+      'shared.partner-testimonial',
+      true
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -95,16 +154,45 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStatisticsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_statistics_sections';
+  info: {
+    description: '';
+    displayName: 'statisticsSection';
+    icon: 'bulletList';
+  };
+  attributes: {
+    countries_represented_map_image: Schema.Attribute.Component<
+      'shared.image',
+      false
+    >;
+    countries_represented_title: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    presence_map_image: Schema.Attribute.Component<'shared.image', false>;
+    presence_title: Schema.Attribute.String;
+    statistics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statistic.statistic'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.media': SharedMedia;
+      'shared.button': SharedButton;
+      'shared.hero-section': SharedHeroSection;
+      'shared.image': SharedImage;
+      'shared.impact-lives-section': SharedImpactLivesSection;
       'shared.objective-section': SharedObjectiveSection;
       'shared.partner-component': SharedPartnerComponent;
-      'shared.quote': SharedQuote;
+      'shared.partner-testimonial': SharedPartnerTestimonial;
+      'shared.partners-testimonials': SharedPartnersTestimonials;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.statistics-section': SharedStatisticsSection;
     }
   }
 }

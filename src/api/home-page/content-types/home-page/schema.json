@@ -11,89 +11,35 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "heroSubTitle1": {
-      "type": "string"
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
     },
-    "heroSubTitle2": {
-      "type": "text"
+    "statistics_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.statistics-section"
     },
-    "heroSubTitle3": {
-      "type": "string"
+    "impact_lives_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.impact-lives-section"
     },
-    "heroDescription": {
-      "type": "text"
-    },
-    "heroButtonText": {
-      "type": "string"
-    },
-    "heroCoverImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "objectiveSubtext1": {
-      "type": "string"
-    },
-    "countriesRepresentText": {
-      "type": "text"
-    },
-    "countriesRepresentNo": {
-      "type": "string"
-    },
-    "careerImpactedNo": {
-      "type": "string"
-    },
-    "careerImpactedText": {
-      "type": "text"
-    },
-    "internshipProvidedNo": {
-      "type": "string"
-    },
-    "internShipProvidedText": {
-      "type": "text"
-    },
-    "studentPreparedPercentage": {
-      "type": "string"
-    },
-    "studentPreparedText": {
-      "type": "text"
-    },
-    "objectiveSubtext2": {
-      "type": "text"
-    },
-    "impactLivesTitleSubtext1": {
-      "type": "string"
-    },
-    "impactLivesTitleSubtext2": {
-      "type": "string"
-    },
-    "impactLivesTitleSubtext3": {
-      "type": "string"
-    },
-    "impactLivesDescription": {
-      "type": "text"
-    },
-    "impactLivesVideoLink1": {
-      "type": "string"
-    },
-    "impactLivesVideoLink2": {
-      "type": "string"
-    },
-    "impactLivesVideoLink3": {
-      "type": "string"
-    },
-    "objectiveSection": {
+    "objective_section": {
       "type": "component",
       "repeatable": false,
       "component": "shared.objective-section"
     },
-    "partnerSection": {
+    "partner_info_section": {
       "type": "component",
       "repeatable": false,
       "component": "shared.partner-component"
+    },
+    "partners_testimonials_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.partners-testimonials"
     }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_statistics_sections",
+  "info": {
+    "displayName": "statisticsSection",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "statistics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::statistic.statistic"
+    },
+    "presence_title": {
+      "type": "string"
+    },
+    "presence_map_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "countries_represented_title": {
+      "type": "string"
+    },
+    "countries_represented_map_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

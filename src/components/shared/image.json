@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "source": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "aria_description": {
+      "type": "string"
+    },
+    "alternate_text": {
+      "type": "string"
+    }
+  }
+}

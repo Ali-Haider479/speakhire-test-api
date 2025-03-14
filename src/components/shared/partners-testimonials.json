@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_partner_components",
+  "collectionName": "components_shared_partners_testimonials",
   "info": {
-    "displayName": "partnerInfoComponent",
-    "icon": "apps",
+    "displayName": "PartnersTestimonials",
+    "icon": "chartBubble",
     "description": ""
   },
   "options": {},
@@ -13,10 +13,10 @@
     "description": {
       "type": "string"
     },
-    "partner_logos": {
+    "partner_testimonial": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.image"
+      "component": "shared.partner-testimonial"
     }
   }
 }

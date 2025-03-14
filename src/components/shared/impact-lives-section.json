@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_impact_lives_sections",
+  "info": {
+    "displayName": "impactLivesSection",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link.link"
+    }
+  }
+}

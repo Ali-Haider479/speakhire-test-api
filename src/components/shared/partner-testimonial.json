@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_partner_testimonials",
+  "info": {
+    "displayName": "PartnerTestimonial",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "institute_name": {
+      "type": "string"
+    },
+    "instituteLogo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}
