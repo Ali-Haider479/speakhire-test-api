@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_what_we_offer_sections",
+  "info": {
+    "displayName": "whatWeOfferSection",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "offering_cards": {
+      "displayName": "offeringCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.offering-card"
+    }
+  }
+}

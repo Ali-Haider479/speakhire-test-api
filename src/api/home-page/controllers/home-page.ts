@@ -40,6 +40,18 @@ export default factories.createCoreController(
             },
             partners_testimonials_section:{
                 populate:['partner_testimonial','partner_testimonial.instituteLogo.source']
+            },
+            become_partner_section:{
+              populate:["button", "cover_image", "cover_image.source"],
+            },
+            eco_system_section:{
+              populate:['eco_system_cards.card_image.source','offering_section.offering_cards.image.source']
+            },
+            workforce_section:{
+              populate:["button", "cover_image.source"]
+            },
+            student_stories_section:{
+              populate:['studentCards.picture.source']
             }
             // Add other sections with their nested components as needed
           },

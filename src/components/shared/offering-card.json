@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_offering_cards",
+  "info": {
+    "displayName": "offeringCard",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

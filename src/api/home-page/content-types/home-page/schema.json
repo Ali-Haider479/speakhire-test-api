@@ -40,6 +40,26 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.partners-testimonials"
+    },
+    "become_partner_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "eco_system_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-with-content-cards"
+    },
+    "workforce_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "student_stories_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.student-stories"
     }
   }
 }

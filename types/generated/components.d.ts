@@ -11,11 +11,41 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContentWithContentCards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_content_with_content_cards';
+  info: {
+    description: '';
+    displayName: 'ecoSystemSection';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    eco_system_cards: Schema.Attribute.Component<'shared.ecosystem-card', true>;
+    offering_section: Schema.Attribute.Component<
+      'shared.what-we-offer-section',
+      false
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedEcosystemCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ecosystem_cards';
+  info: {
+    displayName: 'EcosystemCard';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    card_image: Schema.Attribute.Component<'shared.image', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_sections';
   info: {
     description: '';
-    displayName: 'HeroSection';
+    displayName: 'SectionContent';
     icon: 'chartBubble';
   };
   attributes: {
@@ -65,6 +95,19 @@ export interface SharedObjectiveSection extends Struct.ComponentSchema {
       'oneToMany',
       'api::objective.objective'
     >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedOfferingCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_offering_cards';
+  info: {
+    displayName: 'offeringCard';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Component<'shared.image', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -178,14 +221,58 @@ export interface SharedStatisticsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStudentCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_student_cards';
+  info: {
+    displayName: 'studentCard';
+    icon: 'apps';
+  };
+  attributes: {
+    age: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    picture: Schema.Attribute.Component<'shared.image', false>;
+    story: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedStudentStories extends Struct.ComponentSchema {
+  collectionName: 'components_shared_student_stories';
+  info: {
+    displayName: 'StudentStories';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    studentCards: Schema.Attribute.Component<'shared.student-card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedWhatWeOfferSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_what_we_offer_sections';
+  info: {
+    description: '';
+    displayName: 'whatWeOfferSection';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    offering_cards: Schema.Attribute.Component<'shared.offering-card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.button': SharedButton;
+      'shared.content-with-content-cards': SharedContentWithContentCards;
+      'shared.ecosystem-card': SharedEcosystemCard;
       'shared.hero-section': SharedHeroSection;
       'shared.image': SharedImage;
       'shared.impact-lives-section': SharedImpactLivesSection;
       'shared.objective-section': SharedObjectiveSection;
+      'shared.offering-card': SharedOfferingCard;
       'shared.partner-component': SharedPartnerComponent;
       'shared.partner-testimonial': SharedPartnerTestimonial;
       'shared.partners-testimonials': SharedPartnersTestimonials;
@@ -193,6 +280,9 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.statistics-section': SharedStatisticsSection;
+      'shared.student-card': SharedStudentCard;
+      'shared.student-stories': SharedStudentStories;
+      'shared.what-we-offer-section': SharedWhatWeOfferSection;
     }
   }
 }

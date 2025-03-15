@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_student_stories",
+  "info": {
+    "displayName": "StudentStories",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "studentCards": {
+      "displayName": "studentCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.student-card"
+    }
+  }
+}

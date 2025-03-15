@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_content_with_content_cards",
+  "info": {
+    "displayName": "ecoSystemSection",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "eco_system_cards": {
+      "displayName": "EcosystemCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.ecosystem-card"
+    },
+    "offering_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.what-we-offer-section"
+    }
+  }
+}

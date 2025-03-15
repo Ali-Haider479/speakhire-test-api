@@ -440,9 +440,17 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    become_partner_section: Schema.Attribute.Component<
+      'shared.hero-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    eco_system_section: Schema.Attribute.Component<
+      'shared.content-with-content-cards',
+      false
+    >;
     hero_section: Schema.Attribute.Component<'shared.hero-section', false>;
     impact_lives_section: Schema.Attribute.Component<
       'shared.impact-lives-section',
@@ -471,9 +479,14 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'shared.statistics-section',
       false
     >;
+    student_stories_section: Schema.Attribute.Component<
+      'shared.student-stories',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    workforce_section: Schema.Attribute.Component<'shared.hero-section', false>;
   };
 }
 

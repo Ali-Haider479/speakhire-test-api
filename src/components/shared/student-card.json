@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_student_cards",
+  "info": {
+    "displayName": "studentCard",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "story": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}
