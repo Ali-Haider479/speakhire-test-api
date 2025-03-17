@@ -1,22 +1,27 @@
 /**
- *  about controller
+ * common controller
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from "@strapi/strapi";
 
-export default factories.createCoreController('api::about.about',({ strapi }) => ({
+export default factories.createCoreController(
+  "api::common.common",
+  ({ strapi }) => ({
     async find(ctx) {
       // Call the default find method
       const { data, meta } = await super.find(ctx);
 
       // Get the homepage with all deeply nested components and relations
       const entity = await strapi.entityService.findOne(
-        "api::about.about",
+        "api::common.common",
         data.id,
         {
           populate: {
-            hero_section: {
-              populate: ["cover_image.source"],
+            objective_section: {
+              populate: ["objectives"],
+            },
+            become_partner_section: {
+              populate: ["button", "cover_image", "cover_image.source"],
             },
           },
         }
@@ -24,4 +29,5 @@ export default factories.createCoreController('api::about.about',({ strapi }) =>
 
       return { data: entity, meta };
     },
-  }));
+  })
+);

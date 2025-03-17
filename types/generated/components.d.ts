@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedAboutHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_about_hero_sections';
+  info: {
+    displayName: 'about-hero-section';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.Text;
+    descriptionTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -265,6 +279,7 @@ export interface SharedWhatWeOfferSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.about-hero-section': SharedAboutHeroSection;
       'shared.button': SharedButton;
       'shared.content-with-content-cards': SharedContentWithContentCards;
       'shared.ecosystem-card': SharedEcosystemCard;

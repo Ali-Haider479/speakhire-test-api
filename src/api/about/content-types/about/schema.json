@@ -12,15 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.rich-text",
-        "shared.slider"
-      ]
+    "hero_section": {
+      "displayName": "about-hero-section",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.about-hero-section"
     }
   }
 }

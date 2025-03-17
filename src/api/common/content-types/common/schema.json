@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "commons",
+  "info": {
+    "singularName": "common",
+    "pluralName": "commons",
+    "displayName": "Common",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "objective_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.objective-section"
+    },
+    "become_partner_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    }
+  }
+}
