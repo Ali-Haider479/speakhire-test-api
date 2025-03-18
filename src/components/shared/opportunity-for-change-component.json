@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_opportunity_for_change_components",
+  "info": {
+    "displayName": "OpportunityForChangeComponent",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "statistics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::statistic.statistic"
+    }
+  }
+}

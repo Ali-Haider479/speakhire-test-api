@@ -26,11 +26,6 @@
       "repeatable": false,
       "component": "shared.impact-lives-section"
     },
-    "objective_section": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.objective-section"
-    },
     "partner_info_section": {
       "type": "component",
       "repeatable": false,
@@ -40,11 +35,6 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.partners-testimonials"
-    },
-    "become_partner_section": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.hero-section"
     },
     "eco_system_section": {
       "type": "component",

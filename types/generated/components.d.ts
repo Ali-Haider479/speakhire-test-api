@@ -126,6 +126,21 @@ export interface SharedOfferingCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedOpportunityForChangeComponent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_opportunity_for_change_components';
+  info: {
+    displayName: 'OpportunityForChangeComponent';
+    icon: 'apps';
+  };
+  attributes: {
+    statistics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statistic.statistic'
+    >;
+  };
+}
+
 export interface SharedPartnerComponent extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_components';
   info: {
@@ -143,11 +158,12 @@ export interface SharedPartnerComponent extends Struct.ComponentSchema {
 export interface SharedPartnerTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_testimonials';
   info: {
+    description: '';
     displayName: 'PartnerTestimonial';
     icon: 'apps';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     designation: Schema.Attribute.String;
     institute_name: Schema.Attribute.String;
     instituteLogo: Schema.Attribute.Component<'shared.image', false>;
@@ -196,6 +212,20 @@ export interface SharedSeo extends Struct.ComponentSchema {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     shareImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedSimpleContentWithoutButton
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_simple_content_without_buttons';
+  info: {
+    displayName: 'SimpleContentWithoutButton';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -262,6 +292,25 @@ export interface SharedStudentStories extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTheoryOfChangeComponent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_theory_of_change_components';
+  info: {
+    description: '';
+    displayName: 'TheoryOfChangeComponent';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    descriptionTitle: Schema.Attribute.String;
+    link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
+    opportunity_for_change_section: Schema.Attribute.Component<
+      'shared.opportunity-for-change-component',
+      false
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedWhatWeOfferSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_what_we_offer_sections';
   info: {
@@ -270,8 +319,21 @@ export interface SharedWhatWeOfferSection extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     offering_cards: Schema.Attribute.Component<'shared.offering-card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedWhyNewNameSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_why_new_name_sections';
+  info: {
+    displayName: 'WhyNewNameSection';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    descriptionTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -288,16 +350,20 @@ declare module '@strapi/strapi' {
       'shared.impact-lives-section': SharedImpactLivesSection;
       'shared.objective-section': SharedObjectiveSection;
       'shared.offering-card': SharedOfferingCard;
+      'shared.opportunity-for-change-component': SharedOpportunityForChangeComponent;
       'shared.partner-component': SharedPartnerComponent;
       'shared.partner-testimonial': SharedPartnerTestimonial;
       'shared.partners-testimonials': SharedPartnersTestimonials;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.simple-content-without-button': SharedSimpleContentWithoutButton;
       'shared.slider': SharedSlider;
       'shared.statistics-section': SharedStatisticsSection;
       'shared.student-card': SharedStudentCard;
       'shared.student-stories': SharedStudentStories;
+      'shared.theory-of-change-component': SharedTheoryOfChangeComponent;
       'shared.what-we-offer-section': SharedWhatWeOfferSection;
+      'shared.why-new-name-section': SharedWhyNewNameSection;
     }
   }
 }

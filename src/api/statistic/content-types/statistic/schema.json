@@ -4,17 +4,18 @@
   "info": {
     "singularName": "statistic",
     "pluralName": "statistics",
-    "displayName": "statistics"
+    "displayName": "statistics",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "count": {
+    "numericTitle": {
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

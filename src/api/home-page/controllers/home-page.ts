@@ -32,17 +32,11 @@ export default factories.createCoreController(
             impact_lives_section: {
               populate: ["links"],
             },
-            objective_section:{
-                populate: ["objectives"], 
-            },
             partner_info_section:{
                 populate:['partner_logos','partner_logos.source']
             },
             partners_testimonials_section:{
                 populate:['partner_testimonial','partner_testimonial.instituteLogo.source']
-            },
-            become_partner_section:{
-              populate:["button", "cover_image", "cover_image.source"],
             },
             eco_system_section:{
               populate:['eco_system_cards.card_image.source','offering_section.offering_cards.image.source']

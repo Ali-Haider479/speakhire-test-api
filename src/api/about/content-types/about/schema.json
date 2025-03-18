@@ -17,6 +17,29 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.about-hero-section"
+    },
+    "about_ecosystem": {
+      "displayName": "SimpleContentWithoutButton",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.simple-content-without-button"
+    },
+    "theory_of_change_section": {
+      "displayName": "TheoryOfChangeComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.theory-of-change-component"
+    },
+    "why_new_name_section": {
+      "displayName": "WhyNewNameSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.why-new-name-section"
+    },
+    "meet_visionary_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
     }
   }
 }

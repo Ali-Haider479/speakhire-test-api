@@ -11,7 +11,7 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
     "offering_cards": {
       "displayName": "offeringCard",

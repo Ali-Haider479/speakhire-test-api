@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_why_new_name_sections",
+  "info": {
+    "displayName": "WhyNewNameSection",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "descriptionTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

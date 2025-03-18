@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_simple_content_without_buttons",
+  "info": {
+    "displayName": "SimpleContentWithoutButton",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cover_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

@@ -381,6 +381,10 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    about_ecosystem: Schema.Attribute.Component<
+      'shared.simple-content-without-button',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -391,10 +395,22 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
+    meet_visionary_section: Schema.Attribute.Component<
+      'shared.hero-section',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    theory_of_change_section: Schema.Attribute.Component<
+      'shared.theory-of-change-component',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    why_new_name_section: Schema.Attribute.Component<
+      'shared.why-new-name-section',
+      false
+    >;
   };
 }
 
@@ -478,10 +494,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    become_partner_section: Schema.Attribute.Component<
-      'shared.hero-section',
-      false
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -500,10 +512,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
-    objective_section: Schema.Attribute.Component<
-      'shared.objective-section',
-      false
-    >;
     partner_info_section: Schema.Attribute.Component<
       'shared.partner-component',
       false
@@ -531,6 +539,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiLinkLink extends Struct.CollectionTypeSchema {
   collectionName: 'links';
   info: {
+    description: '';
     displayName: 'link';
     pluralName: 'links';
     singularName: 'link';
@@ -542,14 +551,45 @@ export interface ApiLinkLink extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::link.link'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiMagazineMagazine extends Struct.CollectionTypeSchema {
+  collectionName: 'magazines';
+  info: {
+    displayName: 'Magazine';
+    pluralName: 'magazines';
+    singularName: 'magazine';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::magazine.magazine'
+    > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 
@@ -585,6 +625,7 @@ export interface ApiObjectiveObjective extends Struct.CollectionTypeSchema {
 export interface ApiStatisticStatistic extends Struct.CollectionTypeSchema {
   collectionName: 'statistics';
   info: {
+    description: '';
     displayName: 'statistics';
     pluralName: 'statistics';
     singularName: 'statistic';
@@ -593,17 +634,17 @@ export interface ApiStatisticStatistic extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    count: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::statistic.statistic'
     > &
       Schema.Attribute.Private;
+    numericTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1125,6 +1166,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::link.link': ApiLinkLink;
+      'api::magazine.magazine': ApiMagazineMagazine;
       'api::objective.objective': ApiObjectiveObjective;
       'api::statistic.statistic': ApiStatisticStatistic;
       'plugin::content-releases.release': PluginContentReleasesRelease;

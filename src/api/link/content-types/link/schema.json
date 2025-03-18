@@ -4,7 +4,8 @@
   "info": {
     "singularName": "link",
     "pluralName": "links",
-    "displayName": "link"
+    "displayName": "link",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,12 @@
   "attributes": {
     "url": {
       "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
