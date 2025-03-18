@@ -40,6 +40,24 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.hero-section"
+    },
+    "magazine_section": {
+      "displayName": "Magazine",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.magazine"
+    },
+    "latest_news": {
+      "displayName": "LatestNewsSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.latest-news-section"
+    },
+    "activities_outcome_section": {
+      "displayName": "ActivitiesOutcomeSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.activities-outcome-section"
     }
   }
 }

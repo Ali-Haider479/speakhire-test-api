@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_magazines",
+  "info": {
+    "displayName": "Magazine",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "magazines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::magazine.magazine"
+    }
+  }
+}

@@ -14,6 +14,19 @@ export interface SharedAboutHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedActivitiesOutcomeSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_activities_outcome_sections';
+  info: {
+    displayName: 'ActivitiesOutcomeSection';
+    icon: 'apps';
+  };
+  attributes: {
+    carousel_images: Schema.Attribute.Component<'shared.image', true>;
+    outcomes: Schema.Attribute.Component<'shared.outcomes', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -97,6 +110,32 @@ export interface SharedImpactLivesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLatestNewsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_latest_news_sections';
+  info: {
+    displayName: 'LatestNewsSection';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    news: Schema.Attribute.Relation<'oneToMany', 'api::news.news'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedMagazine extends Struct.ComponentSchema {
+  collectionName: 'components_shared_magazines';
+  info: {
+    displayName: 'Magazine';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    magazines: Schema.Attribute.Relation<'oneToMany', 'api::magazine.magazine'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedObjectiveSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_objective_sections';
   info: {
@@ -138,6 +177,17 @@ export interface SharedOpportunityForChangeComponent
       'oneToMany',
       'api::statistic.statistic'
     >;
+  };
+}
+
+export interface SharedOutcomes extends Struct.ComponentSchema {
+  collectionName: 'components_shared_outcomes';
+  info: {
+    displayName: 'outcomes';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
   };
 }
 
@@ -342,15 +392,19 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.about-hero-section': SharedAboutHeroSection;
+      'shared.activities-outcome-section': SharedActivitiesOutcomeSection;
       'shared.button': SharedButton;
       'shared.content-with-content-cards': SharedContentWithContentCards;
       'shared.ecosystem-card': SharedEcosystemCard;
       'shared.hero-section': SharedHeroSection;
       'shared.image': SharedImage;
       'shared.impact-lives-section': SharedImpactLivesSection;
+      'shared.latest-news-section': SharedLatestNewsSection;
+      'shared.magazine': SharedMagazine;
       'shared.objective-section': SharedObjectiveSection;
       'shared.offering-card': SharedOfferingCard;
       'shared.opportunity-for-change-component': SharedOpportunityForChangeComponent;
+      'shared.outcomes': SharedOutcomes;
       'shared.partner-component': SharedPartnerComponent;
       'shared.partner-testimonial': SharedPartnerTestimonial;
       'shared.partners-testimonials': SharedPartnersTestimonials;

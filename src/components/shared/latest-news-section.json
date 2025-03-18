@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_latest_news_sections",
+  "info": {
+    "displayName": "LatestNewsSection",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "news": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news.news"
+    }
+  }
+}

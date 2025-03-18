@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_outcomes",
+  "info": {
+    "displayName": "outcomes",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    }
+  }
+}
