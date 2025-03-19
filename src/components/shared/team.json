@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_teams",
+  "info": {
+    "displayName": "Team",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
+    }
+  }
+}

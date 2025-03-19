@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "activities_pages",
+  "info": {
+    "singularName": "activities-page",
+    "pluralName": "activities-pages",
+    "displayName": "ActivitiesPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "global_leaders_component": {
+      "displayName": "global_leaders_component",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.global-leaders-component"
+    },
+    "speakers_impact": {
+      "displayName": "speakersImpact",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.speakers-impact"
+    }
+  }
+}

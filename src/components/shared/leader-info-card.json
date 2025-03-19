@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_leader_info_cards",
+  "info": {
+    "displayName": "leader_info_card",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "picture": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

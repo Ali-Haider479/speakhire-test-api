@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_members",
+  "info": {
+    "singularName": "team-member",
+    "pluralName": "team-members",
+    "displayName": "TeamMember",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "team_members"
+    },
+    "message": {
+      "type": "text"
+    },
+    "photo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}

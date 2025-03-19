@@ -44,9 +44,6 @@ export default factories.createCoreController(
             workforce_section:{
               populate:["button", "cover_image.source"]
             },
-            student_stories_section:{
-              populate:['studentCards.picture.source']
-            }
             // Add other sections with their nested components as needed
           },
         }

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_global_leaders_components",
+  "info": {
+    "displayName": "global_leaders_component",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "leader_info_card": {
+      "displayName": "leader_info_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.leader-info-card"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_team_sections",
+  "info": {
+    "displayName": "team_section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team"
+    }
+  }
+}

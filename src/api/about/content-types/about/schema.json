@@ -58,6 +58,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.activities-outcome-section"
+    },
+    "team_section": {
+      "displayName": "team_section",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.team-section"
     }
   }
 }

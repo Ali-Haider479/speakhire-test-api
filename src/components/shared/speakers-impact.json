@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_speakers_impacts",
+  "info": {
+    "displayName": "speakersImpact",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "speaker_impact": {
+      "displayName": "imageWithVideoLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.image-with-video-link"
+    }
+  }
+}

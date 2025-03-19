@@ -68,6 +68,22 @@ export interface SharedEcosystemCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedGlobalLeadersComponent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_global_leaders_components';
+  info: {
+    description: '';
+    displayName: 'global_leaders_component';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    leader_info_card: Schema.Attribute.Component<
+      'shared.leader-info-card',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_sections';
   info: {
@@ -96,6 +112,18 @@ export interface SharedImage extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedImageWithVideoLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_with_video_links';
+  info: {
+    displayName: 'imageWithVideoLink';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
+    picture: Schema.Attribute.Component<'shared.image', false>;
+  };
+}
+
 export interface SharedImpactLivesSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_impact_lives_sections';
   info: {
@@ -120,6 +148,20 @@ export interface SharedLatestNewsSection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     news: Schema.Attribute.Relation<'oneToMany', 'api::news.news'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLeaderInfoCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_leader_info_cards';
+  info: {
+    displayName: 'leader_info_card';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    picture: Schema.Attribute.Component<'shared.image', false>;
+    role: Schema.Attribute.String;
   };
 }
 
@@ -291,6 +333,22 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSpeakersImpact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_speakers_impacts';
+  info: {
+    displayName: 'speakersImpact';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    speaker_impact: Schema.Attribute.Component<
+      'shared.image-with-video-link',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedStatisticsSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_statistics_sections';
   info: {
@@ -339,6 +397,32 @@ export interface SharedStudentStories extends Struct.ComponentSchema {
     description: Schema.Attribute.String;
     studentCards: Schema.Attribute.Component<'shared.student-card', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTeam extends Struct.ComponentSchema {
+  collectionName: 'components_shared_teams';
+  info: {
+    displayName: 'Team';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    team_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTeamSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_sections';
+  info: {
+    displayName: 'team_section';
+    icon: 'apps';
+  };
+  attributes: {
+    team: Schema.Attribute.Component<'shared.team', true>;
   };
 }
 
@@ -396,10 +480,13 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.content-with-content-cards': SharedContentWithContentCards;
       'shared.ecosystem-card': SharedEcosystemCard;
+      'shared.global-leaders-component': SharedGlobalLeadersComponent;
       'shared.hero-section': SharedHeroSection;
       'shared.image': SharedImage;
+      'shared.image-with-video-link': SharedImageWithVideoLink;
       'shared.impact-lives-section': SharedImpactLivesSection;
       'shared.latest-news-section': SharedLatestNewsSection;
+      'shared.leader-info-card': SharedLeaderInfoCard;
       'shared.magazine': SharedMagazine;
       'shared.objective-section': SharedObjectiveSection;
       'shared.offering-card': SharedOfferingCard;
@@ -412,9 +499,12 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.simple-content-without-button': SharedSimpleContentWithoutButton;
       'shared.slider': SharedSlider;
+      'shared.speakers-impact': SharedSpeakersImpact;
       'shared.statistics-section': SharedStatisticsSection;
       'shared.student-card': SharedStudentCard;
       'shared.student-stories': SharedStudentStories;
+      'shared.team': SharedTeam;
+      'shared.team-section': SharedTeamSection;
       'shared.theory-of-change-component': SharedTheoryOfChangeComponent;
       'shared.what-we-offer-section': SharedWhatWeOfferSection;
       'shared.why-new-name-section': SharedWhyNewNameSection;
