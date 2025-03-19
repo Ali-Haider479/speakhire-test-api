@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "first_steps",
+  "info": {
+    "singularName": "first-step",
+    "pluralName": "first-steps",
+    "displayName": "FirstStep"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "highlight": {
+      "type": "text"
+    },
+    "cover_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

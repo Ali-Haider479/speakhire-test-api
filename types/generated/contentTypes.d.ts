@@ -533,6 +533,37 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFirstStepFirstStep extends Struct.SingleTypeSchema {
+  collectionName: 'first_steps';
+  info: {
+    displayName: 'FirstStep';
+    pluralName: 'first-steps';
+    singularName: 'first-step';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    highlight: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::first-step.first-step'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1309,6 +1340,7 @@ declare module '@strapi/strapi' {
       'api::activities-page.activities-page': ApiActivitiesPageActivitiesPage;
       'api::common.common': ApiCommonCommon;
       'api::department.department': ApiDepartmentDepartment;
+      'api::first-step.first-step': ApiFirstStepFirstStep;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::link.link': ApiLinkLink;
