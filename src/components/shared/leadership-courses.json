@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_leadership_courses",
+  "info": {
+    "displayName": "LeadershipCourses",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "leadership_courses": {
+      "displayName": "LeaderShipCoursesCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.leader-ship-courses-card"
+    }
+  }
+}

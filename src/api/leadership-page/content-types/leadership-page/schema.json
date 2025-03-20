@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "leadership_pages",
+  "info": {
+    "singularName": "leadership-page",
+    "pluralName": "leadership-pages",
+    "displayName": "LeadershipPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dbeia_leadership_program": {
+      "displayName": "DBEIA_Leadership_Program",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.dbeia-leadership-program"
+    },
+    "course_curriculum_section": {
+      "displayName": "CourseCurriculum",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.course-curriculum"
+    },
+    "leadership_courses_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.leadership-courses"
+    },
+    "career_path_facilitator_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.career-facilitators"
+    }
+  }
+}

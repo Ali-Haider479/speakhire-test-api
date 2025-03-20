@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_course_curricula",
+  "info": {
+    "displayName": "CourseCurriculum",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "course_curriculum": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcomes"
+    }
+  }
+}

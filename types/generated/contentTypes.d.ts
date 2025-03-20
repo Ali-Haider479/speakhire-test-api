@@ -564,6 +564,59 @@ export interface ApiFirstStepFirstStep extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFoundationYearPageFoundationYearPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'foundation_year_pages';
+  info: {
+    description: '';
+    displayName: 'FoundationYearPage';
+    pluralName: 'foundation-year-pages';
+    singularName: 'foundation-year-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    economic_mobility_section: Schema.Attribute.Component<
+      'shared.economic-mobility',
+      false
+    >;
+    inter_network_section: Schema.Attribute.Component<
+      'shared.inter-network-section',
+      false
+    >;
+    internship_program_section: Schema.Attribute.Component<
+      'shared.simple-content-without-button',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::foundation-year-page.foundation-year-page'
+    > &
+      Schema.Attribute.Private;
+    our_mission_section: Schema.Attribute.Component<
+      'shared.our-mission-carousal',
+      false
+    >;
+    program_outcomes_section: Schema.Attribute.Component<
+      'shared.activities-outcome-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonial_section: Schema.Attribute.Component<
+      'shared.testimonials',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -643,6 +696,51 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     workforce_section: Schema.Attribute.Component<'shared.hero-section', false>;
+  };
+}
+
+export interface ApiLeadershipPageLeadershipPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'leadership_pages';
+  info: {
+    description: '';
+    displayName: 'LeadershipPage';
+    pluralName: 'leadership-pages';
+    singularName: 'leadership-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    career_path_facilitator_section: Schema.Attribute.Component<
+      'shared.career-facilitators',
+      false
+    >;
+    course_curriculum_section: Schema.Attribute.Component<
+      'shared.course-curriculum',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dbeia_leadership_program: Schema.Attribute.Component<
+      'shared.dbeia-leadership-program',
+      false
+    >;
+    leadership_courses_section: Schema.Attribute.Component<
+      'shared.leadership-courses',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::leadership-page.leadership-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1341,8 +1439,10 @@ declare module '@strapi/strapi' {
       'api::common.common': ApiCommonCommon;
       'api::department.department': ApiDepartmentDepartment;
       'api::first-step.first-step': ApiFirstStepFirstStep;
+      'api::foundation-year-page.foundation-year-page': ApiFoundationYearPageFoundationYearPage;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
       'api::link.link': ApiLinkLink;
       'api::magazine.magazine': ApiMagazineMagazine;
       'api::news.news': ApiNewsNews;

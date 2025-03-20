@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_shared_simple_content_without_buttons",
+  "collectionName": "components_shared_carousel_images",
   "info": {
-    "displayName": "SimpleContentWithoutButton",
-    "icon": "chartBubble",
-    "description": ""
+    "displayName": "carousel_images",
+    "icon": "apps"
   },
   "options": {},
   "attributes": {
@@ -11,7 +10,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "string"
     },
     "cover_image": {
       "type": "component",

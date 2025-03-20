@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_dbeia_leadership_programs",
+  "info": {
+    "displayName": "DBEIA_Leadership_Program",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description_part1": {
+      "type": "text"
+    },
+    "description_part2": {
+      "type": "text"
+    },
+    "prerequisition_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcomes"
+    },
+    "cover_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

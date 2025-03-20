@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_career_facilitators",
+  "info": {
+    "displayName": "CareerFacilitators",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "text"
+    },
+    "team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
+    }
+  }
+}

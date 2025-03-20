@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_testimonial_components",
+  "info": {
+    "displayName": "TestimonialComponent",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "highlight": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "employer": {
+      "type": "string"
+    },
+    "association": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

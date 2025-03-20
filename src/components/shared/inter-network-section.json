@@ -1,17 +1,13 @@
 {
-  "collectionName": "components_shared_simple_content_without_buttons",
+  "collectionName": "components_shared_inter_network_sections",
   "info": {
-    "displayName": "SimpleContentWithoutButton",
-    "icon": "chartBubble",
-    "description": ""
+    "displayName": "InterNetworkSection",
+    "icon": "chartBubble"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "description": {
-      "type": "text"
     },
     "cover_image": {
       "type": "component",

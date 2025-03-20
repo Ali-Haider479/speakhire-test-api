@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_economic_mobilities",
+  "info": {
+    "displayName": "EconomicMobility",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.image",
+      "max": 9
+    }
+  }
+}

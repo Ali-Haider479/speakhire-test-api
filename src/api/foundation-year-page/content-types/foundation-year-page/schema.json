@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "foundation_year_pages",
+  "info": {
+    "singularName": "foundation-year-page",
+    "pluralName": "foundation-year-pages",
+    "displayName": "FoundationYearPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "internship_program_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.simple-content-without-button"
+    },
+    "economic_mobility_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.economic-mobility"
+    },
+    "inter_network_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.inter-network-section"
+    },
+    "program_outcomes_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.activities-outcome-section"
+    },
+    "testimonial_section": {
+      "displayName": "Testimonials",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials"
+    },
+    "our_mission_section": {
+      "displayName": "OurMissionCarousal",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.our-mission-carousal"
+    }
+  }
+}

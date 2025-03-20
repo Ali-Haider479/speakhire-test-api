@@ -38,6 +38,36 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCareerFacilitators extends Struct.ComponentSchema {
+  collectionName: 'components_shared_career_facilitators';
+  info: {
+    description: '';
+    displayName: 'CareerFacilitators';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    sub_title: Schema.Attribute.Text;
+    team_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCarouselImages extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousel_images';
+  info: {
+    displayName: 'carousel_images';
+    icon: 'apps';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContentWithContentCards extends Struct.ComponentSchema {
   collectionName: 'components_shared_content_with_content_cards';
   info: {
@@ -53,6 +83,51 @@ export interface SharedContentWithContentCards extends Struct.ComponentSchema {
       false
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCourseCurriculum extends Struct.ComponentSchema {
+  collectionName: 'components_shared_course_curricula';
+  info: {
+    displayName: 'CourseCurriculum';
+    icon: 'apps';
+  };
+  attributes: {
+    course_curriculum: Schema.Attribute.Component<'shared.outcomes', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedDbeiaLeadershipProgram extends Struct.ComponentSchema {
+  collectionName: 'components_shared_dbeia_leadership_programs';
+  info: {
+    displayName: 'DBEIA_Leadership_Program';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description_part1: Schema.Attribute.Text;
+    description_part2: Schema.Attribute.Text;
+    prerequisition_list: Schema.Attribute.Component<'shared.outcomes', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedEconomicMobility extends Struct.ComponentSchema {
+  collectionName: 'components_shared_economic_mobilities';
+  info: {
+    displayName: 'EconomicMobility';
+    icon: 'apps';
+  };
+  attributes: {
+    images: Schema.Attribute.Component<'shared.image', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9;
+        },
+        number
+      >;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -138,6 +213,18 @@ export interface SharedImpactLivesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedInterNetworkSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_inter_network_sections';
+  info: {
+    displayName: 'InterNetworkSection';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedLatestNewsSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_latest_news_sections';
   info: {
@@ -162,6 +249,36 @@ export interface SharedLeaderInfoCard extends Struct.ComponentSchema {
     name: Schema.Attribute.String;
     picture: Schema.Attribute.Component<'shared.image', false>;
     role: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLeaderShipCoursesCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_leader_ship_courses_cards';
+  info: {
+    displayName: 'LeaderShipCoursesCard';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.Text;
+    outcomes: Schema.Attribute.Component<'shared.outcomes', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLeadershipCourses extends Struct.ComponentSchema {
+  collectionName: 'components_shared_leadership_courses';
+  info: {
+    description: '';
+    displayName: 'LeadershipCourses';
+    icon: 'apps';
+  };
+  attributes: {
+    leadership_courses: Schema.Attribute.Component<
+      'shared.leader-ship-courses-card',
+      true
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -219,6 +336,19 @@ export interface SharedOpportunityForChangeComponent
       'oneToMany',
       'api::statistic.statistic'
     >;
+  };
+}
+
+export interface SharedOurMissionCarousal extends Struct.ComponentSchema {
+  collectionName: 'components_shared_our_mission_carousals';
+  info: {
+    description: '';
+    displayName: 'OurMissionCarousal';
+    icon: 'apps';
+  };
+  attributes: {
+    carousel_images: Schema.Attribute.Component<'shared.carousel-images', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -311,6 +441,7 @@ export interface SharedSimpleContentWithoutButton
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_simple_content_without_buttons';
   info: {
+    description: '';
     displayName: 'SimpleContentWithoutButton';
     icon: 'chartBubble';
   };
@@ -426,6 +557,39 @@ export interface SharedTeamSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTestimonialComponent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonial_components';
+  info: {
+    displayName: 'TestimonialComponent';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    association: Schema.Attribute.String;
+    cover_image: Schema.Attribute.Component<'shared.image', false>;
+    description: Schema.Attribute.Text;
+    designation: Schema.Attribute.String;
+    employer: Schema.Attribute.String;
+    highlight: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials';
+  info: {
+    description: '';
+    displayName: 'Testimonials';
+    icon: 'apps';
+  };
+  attributes: {
+    testimonials: Schema.Attribute.Component<
+      'shared.testimonial-component',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTheoryOfChangeComponent extends Struct.ComponentSchema {
   collectionName: 'components_shared_theory_of_change_components';
   info: {
@@ -478,19 +642,28 @@ declare module '@strapi/strapi' {
       'shared.about-hero-section': SharedAboutHeroSection;
       'shared.activities-outcome-section': SharedActivitiesOutcomeSection;
       'shared.button': SharedButton;
+      'shared.career-facilitators': SharedCareerFacilitators;
+      'shared.carousel-images': SharedCarouselImages;
       'shared.content-with-content-cards': SharedContentWithContentCards;
+      'shared.course-curriculum': SharedCourseCurriculum;
+      'shared.dbeia-leadership-program': SharedDbeiaLeadershipProgram;
+      'shared.economic-mobility': SharedEconomicMobility;
       'shared.ecosystem-card': SharedEcosystemCard;
       'shared.global-leaders-component': SharedGlobalLeadersComponent;
       'shared.hero-section': SharedHeroSection;
       'shared.image': SharedImage;
       'shared.image-with-video-link': SharedImageWithVideoLink;
       'shared.impact-lives-section': SharedImpactLivesSection;
+      'shared.inter-network-section': SharedInterNetworkSection;
       'shared.latest-news-section': SharedLatestNewsSection;
       'shared.leader-info-card': SharedLeaderInfoCard;
+      'shared.leader-ship-courses-card': SharedLeaderShipCoursesCard;
+      'shared.leadership-courses': SharedLeadershipCourses;
       'shared.magazine': SharedMagazine;
       'shared.objective-section': SharedObjectiveSection;
       'shared.offering-card': SharedOfferingCard;
       'shared.opportunity-for-change-component': SharedOpportunityForChangeComponent;
+      'shared.our-mission-carousal': SharedOurMissionCarousal;
       'shared.outcomes': SharedOutcomes;
       'shared.partner-component': SharedPartnerComponent;
       'shared.partner-testimonial': SharedPartnerTestimonial;
@@ -505,6 +678,8 @@ declare module '@strapi/strapi' {
       'shared.student-stories': SharedStudentStories;
       'shared.team': SharedTeam;
       'shared.team-section': SharedTeamSection;
+      'shared.testimonial-component': SharedTestimonialComponent;
+      'shared.testimonials': SharedTestimonials;
       'shared.theory-of-change-component': SharedTheoryOfChangeComponent;
       'shared.what-we-offer-section': SharedWhatWeOfferSection;
       'shared.why-new-name-section': SharedWhyNewNameSection;
