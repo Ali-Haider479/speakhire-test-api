@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_courses_cards",
+  "info": {
+    "displayName": "courses_card",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "course_img": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "what_course_offer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcomes"
+    },
+    "application_closing_date": {
+      "type": "string"
+    }
+  }
+}

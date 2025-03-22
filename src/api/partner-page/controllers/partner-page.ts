@@ -1,11 +1,11 @@
 /**
- * activities-page controller
+ * partner-page controller
  */
 
 import { factories } from "@strapi/strapi";
 
 export default factories.createCoreController(
-  "api::activities-page.activities-page",
+  "api::partner-page.partner-page",
   ({ strapi }) => ({
     async find(ctx) {
       // Call the default find method
@@ -20,19 +20,25 @@ export default factories.createCoreController(
 
       // Get the homepage with deeply nested components and relations
       const entity = await strapi.entityService.findOne(
-        "api::activities-page.activities-page",
+        "api::partner-page.partner-page",
         entityId,
         {
           populate: {
-            global_leaders_component: {
-              populate: ["leader_info_card.picture.source"],
+            hero_section: {
+              populate: ["button", "cover_image.source"]
             },
-            speakers_impact: {
-              populate: [
-                "speaker_impact.picture.source",
-                "speaker_impact.link",
-              ],
+            economic_growth_statistics:{
+                populate:["statistics"]
             },
+            join_change_maker_section:{
+                populate:["buttons","partner_logos.source"]
+            },
+            partners_objective:{
+                populate:["objectives"]
+            },
+            talents_testimonial:{
+                populate:["testimonials.cover_image.source"]
+            }
           },
         }
       );

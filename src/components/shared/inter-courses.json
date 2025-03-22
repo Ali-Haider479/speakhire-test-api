@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_inter_courses",
+  "info": {
+    "displayName": "InterCourses",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "courses_cards": {
+      "displayName": "courses_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.courses-card"
+    }
+  }
+}

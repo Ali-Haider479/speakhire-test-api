@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_better_tommorow_cards",
+  "info": {
+    "displayName": "BetterTommorowCard",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button",
+      "max": 2
+    }
+  }
+}

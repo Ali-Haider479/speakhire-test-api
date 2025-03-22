@@ -35,9 +35,6 @@ export default factories.createCoreController(
             partner_info_section:{
                 populate:['partner_logos','partner_logos.source']
             },
-            partners_testimonials_section:{
-                populate:['partner_testimonial','partner_testimonial.instituteLogo.source']
-            },
             eco_system_section:{
               populate:['eco_system_cards.card_image.source','offering_section.offering_cards.image.source']
             },

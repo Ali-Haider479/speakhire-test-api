@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_otherway_contribute_sections",
+  "info": {
+    "displayName": "OtherwayContributeSection",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "contribute_card": {
+      "displayName": "contribute_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contribute-card"
+    }
+  }
+}

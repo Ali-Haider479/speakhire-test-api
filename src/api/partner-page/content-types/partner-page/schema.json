@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "partner_pages",
+  "info": {
+    "singularName": "partner-page",
+    "pluralName": "partner-pages",
+    "displayName": "PartnerPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "economic_growth_statistics": {
+      "displayName": "EconomicGrowthStatistics",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.economic-growth-statistics"
+    },
+    "join_change_maker_section": {
+      "displayName": "JoinChangeMakerComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.join-change-maker-component"
+    },
+    "partners_objective": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.objective-section"
+    },
+    "talents_testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials"
+    }
+  }
+}

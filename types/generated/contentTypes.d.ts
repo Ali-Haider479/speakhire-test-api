@@ -461,6 +461,59 @@ export interface ApiActivitiesPageActivitiesPage
   };
 }
 
+export interface ApiChampionsPageChampionsPage extends Struct.SingleTypeSchema {
+  collectionName: 'champions_pages';
+  info: {
+    description: '';
+    displayName: 'ChampionsPage';
+    pluralName: 'champions-pages';
+    singularName: 'champions-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    become_champion_section: Schema.Attribute.Component<
+      'shared.hero-section',
+      false
+    >;
+    champion_activities_section: Schema.Attribute.Component<
+      'shared.otherway-contribute-section',
+      false
+    >;
+    champion_stories_section: Schema.Attribute.Component<
+      'shared.champion-stories-section',
+      false
+    >;
+    champion_testimonial_section: Schema.Attribute.Component<
+      'shared.testimonials',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_section: Schema.Attribute.Component<'shared.hero-section', false>;
+    leading_companies_section: Schema.Attribute.Component<
+      'shared.join-change-maker-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::champions-page.champions-page'
+    > &
+      Schema.Attribute.Private;
+    other_way_to_impact_section: Schema.Attribute.Component<
+      'shared.otherway-contribute-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCommonCommon extends Struct.SingleTypeSchema {
   collectionName: 'commons';
   info: {
@@ -488,6 +541,10 @@ export interface ApiCommonCommon extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     objective_section: Schema.Attribute.Component<
       'shared.objective-section',
+      false
+    >;
+    partners_testimonials_section: Schema.Attribute.Component<
+      'shared.partners-testimonials',
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -527,6 +584,59 @@ export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::team-member.team-member'
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDonationPageDonationPage extends Struct.SingleTypeSchema {
+  collectionName: 'donation_pages';
+  info: {
+    description: '';
+    displayName: 'DonationPage';
+    pluralName: 'donation-pages';
+    singularName: 'donation-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    better_tomorrow_card: Schema.Attribute.Component<
+      'shared.better-tommorow-card',
+      false
+    >;
+    contributors_section: Schema.Attribute.Component<
+      'shared.contributors',
+      false
+    >;
+    corporate_plans_section: Schema.Attribute.Component<
+      'shared.corporate-plans',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    donation_changes_lives: Schema.Attribute.Component<
+      'shared.economic-mobility',
+      false
+    >;
+    donationTestimonals: Schema.Attribute.Component<
+      'shared.testimonial-component',
+      true
+    >;
+    hero_section: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::donation-page.donation-page'
+    > &
+      Schema.Attribute.Private;
+    otherway_contribute_section: Schema.Attribute.Component<
+      'shared.otherway-contribute-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -683,10 +793,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'shared.partner-component',
       false
     >;
-    partners_testimonials_section: Schema.Attribute.Component<
-      'shared.partners-testimonials',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
     statistics_section: Schema.Attribute.Component<
       'shared.statistics-section',
@@ -696,6 +802,48 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     workforce_section: Schema.Attribute.Component<'shared.hero-section', false>;
+  };
+}
+
+export interface ApiInternsPageInternsPage extends Struct.SingleTypeSchema {
+  collectionName: 'interns_pages';
+  info: {
+    description: '';
+    displayName: 'InternsPage';
+    pluralName: 'interns-pages';
+    singularName: 'interns-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    alumins_testimonials: Schema.Attribute.Component<
+      'shared.testimonials',
+      false
+    >;
+    apply_now_section: Schema.Attribute.Component<'shared.hero-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero_section: Schema.Attribute.Component<'shared.hero-section', false>;
+    intership_courses: Schema.Attribute.Component<
+      'shared.inter-courses',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::interns-page.interns-page'
+    > &
+      Schema.Attribute.Private;
+    national_mentorship_month: Schema.Attribute.Component<
+      'shared.economic-mobility',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -853,6 +1001,51 @@ export interface ApiObjectiveObjective extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPartnerPagePartnerPage extends Struct.SingleTypeSchema {
+  collectionName: 'partner_pages';
+  info: {
+    description: '';
+    displayName: 'PartnerPage';
+    pluralName: 'partner-pages';
+    singularName: 'partner-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    economic_growth_statistics: Schema.Attribute.Component<
+      'shared.economic-growth-statistics',
+      false
+    >;
+    hero_section: Schema.Attribute.Component<'shared.hero-section', false>;
+    join_change_maker_section: Schema.Attribute.Component<
+      'shared.join-change-maker-component',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partner-page.partner-page'
+    > &
+      Schema.Attribute.Private;
+    partners_objective: Schema.Attribute.Component<
+      'shared.objective-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    talents_testimonial: Schema.Attribute.Component<
+      'shared.testimonials',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1436,17 +1629,21 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::activities-page.activities-page': ApiActivitiesPageActivitiesPage;
+      'api::champions-page.champions-page': ApiChampionsPageChampionsPage;
       'api::common.common': ApiCommonCommon;
       'api::department.department': ApiDepartmentDepartment;
+      'api::donation-page.donation-page': ApiDonationPageDonationPage;
       'api::first-step.first-step': ApiFirstStepFirstStep;
       'api::foundation-year-page.foundation-year-page': ApiFoundationYearPageFoundationYearPage;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::interns-page.interns-page': ApiInternsPageInternsPage;
       'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
       'api::link.link': ApiLinkLink;
       'api::magazine.magazine': ApiMagazineMagazine;
       'api::news.news': ApiNewsNews;
       'api::objective.objective': ApiObjectiveObjective;
+      'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::statistic.statistic': ApiStatisticStatistic;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'plugin::content-releases.release': PluginContentReleasesRelease;

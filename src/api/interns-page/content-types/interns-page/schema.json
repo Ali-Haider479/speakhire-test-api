@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "interns_pages",
+  "info": {
+    "singularName": "interns-page",
+    "pluralName": "interns-pages",
+    "displayName": "InternsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "intership_courses": {
+      "displayName": "InterCourses",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.inter-courses"
+    },
+    "alumins_testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials"
+    },
+    "apply_now_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "national_mentorship_month": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.economic-mobility"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_corporate_plan_card_s",
+  "info": {
+    "displayName": "CorporatePlanCard ",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "hours": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "cooperate donor",
+        "individual donor"
+      ]
+    }
+  }
+}

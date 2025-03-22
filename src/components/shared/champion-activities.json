@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_champion_activities",
+  "info": {
+    "displayName": "ChampionActivities",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

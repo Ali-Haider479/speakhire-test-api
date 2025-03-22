@@ -27,6 +27,25 @@ export interface SharedActivitiesOutcomeSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBetterTommorowCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_better_tommorow_cards';
+  info: {
+    displayName: 'BetterTommorowCard';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'shared.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -68,6 +87,48 @@ export interface SharedCarouselImages extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedChampionActivities extends Struct.ComponentSchema {
+  collectionName: 'components_shared_champion_activities';
+  info: {
+    displayName: 'ChampionActivities';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedChampionStoriesSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_champion_stories_sections';
+  info: {
+    displayName: 'champion_stories_section';
+    icon: 'apps';
+  };
+  attributes: {
+    champion_story_card: Schema.Attribute.Component<
+      'shared.champion-story-card',
+      true
+    >;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedChampionStoryCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_champion_story_cards';
+  info: {
+    displayName: 'champion_story_card';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    designation: Schema.Attribute.String;
+    employer_logo: Schema.Attribute.Component<'shared.image', false>;
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    picture: Schema.Attribute.Component<'shared.image', false>;
+  };
+}
+
 export interface SharedContentWithContentCards extends Struct.ComponentSchema {
   collectionName: 'components_shared_content_with_content_cards';
   info: {
@@ -86,6 +147,69 @@ export interface SharedContentWithContentCards extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContributeCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contribute_cards';
+  info: {
+    displayName: 'contribute_card';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContributors extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contributors';
+  info: {
+    displayName: 'Contributors';
+    icon: 'apps';
+  };
+  attributes: {
+    logos: Schema.Attribute.Component<'shared.image', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCorporatePlanCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_corporate_plan_card_s';
+  info: {
+    description: '';
+    displayName: 'CorporatePlanCard ';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    description: Schema.Attribute.Text;
+    hours: Schema.Attribute.String;
+    price: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['cooperate donor', 'individual donor']>;
+  };
+}
+
+export interface SharedCorporatePlans extends Struct.ComponentSchema {
+  collectionName: 'components_shared_corporate_plans';
+  info: {
+    displayName: 'CorporatePlans';
+    icon: 'apps';
+  };
+  attributes: {
+    corporate_plan_card: Schema.Attribute.Component<
+      'shared.corporate-plan-card',
+      true
+    >;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedCourseCurriculum extends Struct.ComponentSchema {
   collectionName: 'components_shared_course_curricula';
   info: {
@@ -95,6 +219,20 @@ export interface SharedCourseCurriculum extends Struct.ComponentSchema {
   attributes: {
     course_curriculum: Schema.Attribute.Component<'shared.outcomes', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCoursesCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_courses_cards';
+  info: {
+    displayName: 'courses_card';
+    icon: 'apps';
+  };
+  attributes: {
+    application_closing_date: Schema.Attribute.String;
+    course_img: Schema.Attribute.Component<'shared.image', false>;
+    title: Schema.Attribute.String;
+    what_course_offer: Schema.Attribute.Component<'shared.outcomes', true>;
   };
 }
 
@@ -110,6 +248,22 @@ export interface SharedDbeiaLeadershipProgram extends Struct.ComponentSchema {
     description_part2: Schema.Attribute.Text;
     prerequisition_list: Schema.Attribute.Component<'shared.outcomes', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedEconomicGrowthStatistics extends Struct.ComponentSchema {
+  collectionName: 'components_shared_economic_growth_statistics';
+  info: {
+    displayName: 'EconomicGrowthStatistics';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    statistics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::statistic.statistic'
+    >;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -213,6 +367,19 @@ export interface SharedImpactLivesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedInterCourses extends Struct.ComponentSchema {
+  collectionName: 'components_shared_inter_courses';
+  info: {
+    description: '';
+    displayName: 'InterCourses';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    courses_cards: Schema.Attribute.Component<'shared.courses-card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedInterNetworkSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_inter_network_sections';
   info: {
@@ -222,6 +389,33 @@ export interface SharedInterNetworkSection extends Struct.ComponentSchema {
   attributes: {
     cover_image: Schema.Attribute.Component<'shared.image', false>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedJoinChangeMakerComponent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_join_change_maker_components';
+  info: {
+    description: '';
+    displayName: 'JoinChangeMakerComponent';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'shared.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text;
+    partner_logos: Schema.Attribute.Component<'shared.image', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 15;
+        },
+        number
+      >;
+    title: Schema.Attribute.Text;
   };
 }
 
@@ -336,6 +530,20 @@ export interface SharedOpportunityForChangeComponent
       'oneToMany',
       'api::statistic.statistic'
     >;
+  };
+}
+
+export interface SharedOtherwayContributeSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_otherway_contribute_sections';
+  info: {
+    description: '';
+    displayName: 'OtherwayContributeSection';
+    icon: 'apps';
+  };
+  attributes: {
+    contribute_card: Schema.Attribute.Component<'shared.contribute-card', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -641,12 +849,22 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.about-hero-section': SharedAboutHeroSection;
       'shared.activities-outcome-section': SharedActivitiesOutcomeSection;
+      'shared.better-tommorow-card': SharedBetterTommorowCard;
       'shared.button': SharedButton;
       'shared.career-facilitators': SharedCareerFacilitators;
       'shared.carousel-images': SharedCarouselImages;
+      'shared.champion-activities': SharedChampionActivities;
+      'shared.champion-stories-section': SharedChampionStoriesSection;
+      'shared.champion-story-card': SharedChampionStoryCard;
       'shared.content-with-content-cards': SharedContentWithContentCards;
+      'shared.contribute-card': SharedContributeCard;
+      'shared.contributors': SharedContributors;
+      'shared.corporate-plan-card': SharedCorporatePlanCard;
+      'shared.corporate-plans': SharedCorporatePlans;
       'shared.course-curriculum': SharedCourseCurriculum;
+      'shared.courses-card': SharedCoursesCard;
       'shared.dbeia-leadership-program': SharedDbeiaLeadershipProgram;
+      'shared.economic-growth-statistics': SharedEconomicGrowthStatistics;
       'shared.economic-mobility': SharedEconomicMobility;
       'shared.ecosystem-card': SharedEcosystemCard;
       'shared.global-leaders-component': SharedGlobalLeadersComponent;
@@ -654,7 +872,9 @@ declare module '@strapi/strapi' {
       'shared.image': SharedImage;
       'shared.image-with-video-link': SharedImageWithVideoLink;
       'shared.impact-lives-section': SharedImpactLivesSection;
+      'shared.inter-courses': SharedInterCourses;
       'shared.inter-network-section': SharedInterNetworkSection;
+      'shared.join-change-maker-component': SharedJoinChangeMakerComponent;
       'shared.latest-news-section': SharedLatestNewsSection;
       'shared.leader-info-card': SharedLeaderInfoCard;
       'shared.leader-ship-courses-card': SharedLeaderShipCoursesCard;
@@ -663,6 +883,7 @@ declare module '@strapi/strapi' {
       'shared.objective-section': SharedObjectiveSection;
       'shared.offering-card': SharedOfferingCard;
       'shared.opportunity-for-change-component': SharedOpportunityForChangeComponent;
+      'shared.otherway-contribute-section': SharedOtherwayContributeSection;
       'shared.our-mission-carousal': SharedOurMissionCarousal;
       'shared.outcomes': SharedOutcomes;
       'shared.partner-component': SharedPartnerComponent;

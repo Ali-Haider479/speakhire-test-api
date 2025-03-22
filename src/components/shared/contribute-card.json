@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_contribute_cards",
+  "info": {
+    "displayName": "contribute_card",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    }
+  }
+}

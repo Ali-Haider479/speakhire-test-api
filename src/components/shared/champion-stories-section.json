@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_champion_stories_sections",
+  "info": {
+    "displayName": "champion_stories_section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "champion_story_card": {
+      "displayName": "champion_story_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.champion-story-card"
+    }
+  }
+}

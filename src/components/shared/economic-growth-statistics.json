@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_economic_growth_statistics",
+  "info": {
+    "displayName": "EconomicGrowthStatistics",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "statistics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::statistic.statistic"
+    }
+  }
+}

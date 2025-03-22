@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_corporate_plans",
+  "info": {
+    "displayName": "CorporatePlans",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "corporate_plan_card": {
+      "displayName": "CorporatePlanCard ",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.corporate-plan-card"
+    }
+  }
+}

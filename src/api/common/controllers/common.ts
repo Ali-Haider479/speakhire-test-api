@@ -23,8 +23,14 @@ export default factories.createCoreController(
             become_partner_section: {
               populate: ["button", "cover_image", "cover_image.source"],
             },
-            student_stories_section:{
-              populate:['studentCards.picture.source']
+            student_stories_section: {
+              populate: ["studentCards.picture.source"],
+            },
+            partners_testimonials_section: {
+              populate: [
+                "partner_testimonial",
+                "partner_testimonial.instituteLogo.source",
+              ],
             }
           },
         }

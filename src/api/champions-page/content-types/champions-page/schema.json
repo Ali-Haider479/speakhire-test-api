@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "champions_pages",
+  "info": {
+    "singularName": "champions-page",
+    "pluralName": "champions-pages",
+    "displayName": "ChampionsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "champion_activities_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.otherway-contribute-section"
+    },
+    "other_way_to_impact_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.otherway-contribute-section"
+    },
+    "leading_companies_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.join-change-maker-component"
+    },
+    "champion_testimonial_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials"
+    },
+    "champion_stories_section": {
+      "displayName": "champion_stories_section",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.champion-stories-section"
+    },
+    "become_champion_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    }
+  }
+}

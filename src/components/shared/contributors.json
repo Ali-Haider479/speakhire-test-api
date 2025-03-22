@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_contributors",
+  "info": {
+    "displayName": "Contributors",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.image",
+      "max": 4
+    }
+  }
+}

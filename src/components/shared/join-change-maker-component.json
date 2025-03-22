@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_join_change_maker_components",
+  "info": {
+    "displayName": "JoinChangeMakerComponent",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "partner_logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.image",
+      "max": 15
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button",
+      "max": 2
+    }
+  }
+}

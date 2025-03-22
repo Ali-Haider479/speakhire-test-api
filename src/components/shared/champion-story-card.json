@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_champion_story_cards",
+  "info": {
+    "displayName": "champion_story_card",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "picture": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "employer_logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "message": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}

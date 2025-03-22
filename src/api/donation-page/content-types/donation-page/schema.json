@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "donation_pages",
+  "info": {
+    "singularName": "donation-page",
+    "pluralName": "donation-pages",
+    "displayName": "DonationPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section"
+    },
+    "corporate_plans_section": {
+      "displayName": "CorporatePlans",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.corporate-plans"
+    },
+    "better_tomorrow_card": {
+      "displayName": "BetterTommorowCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.better-tommorow-card"
+    },
+    "donation_changes_lives": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.economic-mobility"
+    },
+    "otherway_contribute_section": {
+      "displayName": "OtherwayContributeSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.otherway-contribute-section"
+    },
+    "contributors_section": {
+      "displayName": "Contributors",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.contributors"
+    },
+    "donationTestimonals": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.testimonial-component"
+    }
+  }
+}
