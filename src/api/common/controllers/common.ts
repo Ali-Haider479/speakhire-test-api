@@ -31,6 +31,12 @@ export default factories.createCoreController(
                 "partner_testimonial",
                 "partner_testimonial.instituteLogo.source",
               ],
+            },
+            donate_component:{
+              populate:[
+                "button",
+                "cover_image.source"
+              ]
             }
           },
         }
