@@ -191,7 +191,7 @@ export interface SharedCorporatePlanCard extends Struct.ComponentSchema {
     hours: Schema.Attribute.String;
     price: Schema.Attribute.String;
     title: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['cooperate donor', 'individual donor']>;
+    type: Schema.Attribute.Enumeration<['corporate donor', 'individual donor']>;
   };
 }
 

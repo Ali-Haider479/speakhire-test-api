@@ -27,7 +27,7 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "cooperate donor",
+        "corporate donor",
         "individual donor"
       ]
     }
