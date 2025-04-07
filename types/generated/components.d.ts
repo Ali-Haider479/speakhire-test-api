@@ -49,11 +49,13 @@ export interface SharedBetterTommorowCard extends Struct.ComponentSchema {
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
+    description: '';
     displayName: 'Button';
     icon: 'cursor';
   };
   attributes: {
     inner_text: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
