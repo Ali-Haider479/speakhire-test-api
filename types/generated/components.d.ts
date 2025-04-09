@@ -55,6 +55,7 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
   attributes: {
     inner_text: Schema.Attribute.String;
+    type_form_id: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
 }
