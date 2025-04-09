@@ -228,12 +228,14 @@ export interface SharedCourseCurriculum extends Struct.ComponentSchema {
 export interface SharedCoursesCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_courses_cards';
   info: {
+    description: '';
     displayName: 'courses_card';
     icon: 'apps';
   };
   attributes: {
     application_closing_date: Schema.Attribute.String;
     course_img: Schema.Attribute.Component<'shared.image', false>;
+    invite_text: Schema.Attribute.String;
     title: Schema.Attribute.String;
     what_course_offer: Schema.Attribute.Component<'shared.outcomes', true>;
   };

@@ -2,7 +2,8 @@
   "collectionName": "components_shared_courses_cards",
   "info": {
     "displayName": "courses_card",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,6 +21,9 @@
       "component": "shared.outcomes"
     },
     "application_closing_date": {
+      "type": "string"
+    },
+    "invite_text": {
       "type": "string"
     }
   }
