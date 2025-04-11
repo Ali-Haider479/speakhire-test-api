@@ -42,6 +42,9 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.our-mission-carousal"
+    },
+    "partner_interest_form_id": {
+      "type": "string"
     }
   }
 }

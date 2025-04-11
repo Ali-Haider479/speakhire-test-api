@@ -559,6 +559,36 @@ export interface ApiCommonCommon extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactUsPageContactUsPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_us_pages';
+  info: {
+    displayName: 'ContactUsPage';
+    pluralName: 'contact-us-pages';
+    singularName: 'contact-us-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us-page.contact-us-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type_form_id: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
   collectionName: 'departments';
   info: {
@@ -713,6 +743,7 @@ export interface ApiFoundationYearPageFoundationYearPage
       'shared.our-mission-carousal',
       false
     >;
+    partner_interest_form_id: Schema.Attribute.String;
     program_outcomes_section: Schema.Attribute.Component<
       'shared.activities-outcome-section',
       false
@@ -1632,6 +1663,7 @@ declare module '@strapi/strapi' {
       'api::activities-page.activities-page': ApiActivitiesPageActivitiesPage;
       'api::champions-page.champions-page': ApiChampionsPageChampionsPage;
       'api::common.common': ApiCommonCommon;
+      'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
       'api::department.department': ApiDepartmentDepartment;
       'api::donation-page.donation-page': ApiDonationPageDonationPage;
       'api::first-step.first-step': ApiFirstStepFirstStep;
