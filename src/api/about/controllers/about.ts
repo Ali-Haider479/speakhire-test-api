@@ -13,6 +13,7 @@ export default factories.createCoreController(
 
       // Handle potential issues with data structure
       const entityId = Array.isArray(data) ? data[0]?.id : data?.id;
+      const locale = ctx.query.locale || "en";
 
       if (!entityId) {
         return ctx.notFound("About entity not found");
@@ -50,6 +51,7 @@ export default factories.createCoreController(
               populate:["team.team_members.photo.source"]
             }
           },
+          locale: locale
         }
       );
 

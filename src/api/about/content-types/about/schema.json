@@ -10,60 +10,109 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "hero_section": {
       "displayName": "about-hero-section",
       "type": "component",
       "repeatable": false,
-      "component": "shared.about-hero-section"
+      "component": "shared.about-hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "about_ecosystem": {
       "displayName": "SimpleContentWithoutButton",
       "type": "component",
       "repeatable": false,
-      "component": "shared.simple-content-without-button"
+      "component": "shared.simple-content-without-button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "theory_of_change_section": {
       "displayName": "TheoryOfChangeComponent",
       "type": "component",
       "repeatable": false,
-      "component": "shared.theory-of-change-component"
+      "component": "shared.theory-of-change-component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "why_new_name_section": {
       "displayName": "WhyNewNameSection",
       "type": "component",
       "repeatable": false,
-      "component": "shared.why-new-name-section"
+      "component": "shared.why-new-name-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "meet_visionary_section": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section"
+      "component": "shared.hero-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "magazine_section": {
       "displayName": "Magazine",
       "type": "component",
       "repeatable": false,
-      "component": "shared.magazine"
+      "component": "shared.magazine",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "latest_news": {
       "displayName": "LatestNewsSection",
       "type": "component",
       "repeatable": false,
-      "component": "shared.latest-news-section"
+      "component": "shared.latest-news-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "activities_outcome_section": {
       "displayName": "ActivitiesOutcomeSection",
       "type": "component",
       "repeatable": false,
-      "component": "shared.activities-outcome-section"
+      "component": "shared.activities-outcome-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "team_section": {
       "displayName": "team_section",
       "type": "component",
       "repeatable": false,
-      "component": "shared.team-section"
+      "component": "shared.team-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
