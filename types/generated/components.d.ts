@@ -54,9 +54,13 @@ export interface SharedButton extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
+    external_url: Schema.Attribute.String;
     inner_text: Schema.Attribute.String;
+    internal_url: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::internal-url.internal-url'
+    >;
     type_form_id: Schema.Attribute.String;
-    url: Schema.Attribute.String;
   };
 }
 
@@ -333,6 +337,24 @@ export interface SharedHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedIconButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_icon_buttons';
+  info: {
+    description: '';
+    displayName: 'Icon Button';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    external_url: Schema.Attribute.String;
+    icon: Schema.Attribute.Component<'shared.image', false>;
+    internal_url: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::internal-url.internal-url'
+    >;
+    type_form_id: Schema.Attribute.String;
+  };
+}
+
 export interface SharedImage extends Struct.ComponentSchema {
   collectionName: 'components_shared_images';
   info: {
@@ -367,8 +389,8 @@ export interface SharedImpactLivesSection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
-    links: Schema.Attribute.Relation<'oneToMany', 'api::link.link'>;
     title: Schema.Attribute.String;
+    video_links: Schema.Attribute.Relation<'oneToMany', 'api::link.link'>;
   };
 }
 
@@ -650,6 +672,19 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeoContent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seo_contents';
+  info: {
+    displayName: 'SEO_Content';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    keywords: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSimpleContentWithoutButton
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_simple_content_without_buttons';
@@ -874,6 +909,7 @@ declare module '@strapi/strapi' {
       'shared.ecosystem-card': SharedEcosystemCard;
       'shared.global-leaders-component': SharedGlobalLeadersComponent;
       'shared.hero-section': SharedHeroSection;
+      'shared.icon-button': SharedIconButton;
       'shared.image': SharedImage;
       'shared.image-with-video-link': SharedImageWithVideoLink;
       'shared.impact-lives-section': SharedImpactLivesSection;
@@ -896,6 +932,7 @@ declare module '@strapi/strapi' {
       'shared.partners-testimonials': SharedPartnersTestimonials;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.seo-content': SharedSeoContent;
       'shared.simple-content-without-button': SharedSimpleContentWithoutButton;
       'shared.slider': SharedSlider;
       'shared.speakers-impact': SharedSpeakersImpact;

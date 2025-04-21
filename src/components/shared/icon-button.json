@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_icon_buttons",
+  "info": {
+    "displayName": "Icon Button",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "type_form_id": {
+      "type": "string"
+    },
+    "external_url": {
+      "type": "string"
+    },
+    "internal_url": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::internal-url.internal-url"
+    }
+  }
+}

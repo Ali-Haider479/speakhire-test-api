@@ -409,6 +409,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     team_section: Schema.Attribute.Component<'shared.team-section', false>;
     theory_of_change_section: Schema.Attribute.Component<
       'shared.theory-of-change-component',
@@ -451,10 +452,102 @@ export interface ApiActivitiesPageActivitiesPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     speakers_impact: Schema.Attribute.Component<
       'shared.speakers-impact',
       false
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAppHeaderAppHeader extends Struct.SingleTypeSchema {
+  collectionName: 'app_headers';
+  info: {
+    description: '';
+    displayName: 'AppHeader';
+    pluralName: 'app-headers';
+    singularName: 'app-header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    activities_links: Schema.Attribute.Component<'shared.button', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header_buttons: Schema.Attribute.Component<'shared.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    header_icon_buttons: Schema.Attribute.Component<
+      'shared.icon-button',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    header_links: Schema.Attribute.Component<'shared.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::app-header.app-header'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
+  collectionName: 'careers';
+  info: {
+    description: '';
+    displayName: 'Career';
+    pluralName: 'careers';
+    singularName: 'career';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    application_form_url: Schema.Attribute.String;
+    background: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    doc_url: Schema.Attribute.String;
+    eeo_statement: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career.career'
+    > &
+      Schema.Attribute.Private;
+    long_description: Schema.Attribute.Text;
+    offered_salary: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    qualifications: Schema.Attribute.Component<'shared.outcomes', true>;
+    responsibilities: Schema.Attribute.Component<'shared.outcomes', true>;
+    short_description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -508,6 +601,7 @@ export interface ApiChampionsPageChampionsPage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -668,6 +762,7 @@ export interface ApiDonationPageDonationPage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -677,6 +772,7 @@ export interface ApiDonationPageDonationPage extends Struct.SingleTypeSchema {
 export interface ApiFirstStepFirstStep extends Struct.SingleTypeSchema {
   collectionName: 'first_steps';
   info: {
+    description: '';
     displayName: 'FirstStep';
     pluralName: 'first-steps';
     singularName: 'first-step';
@@ -698,6 +794,7 @@ export interface ApiFirstStepFirstStep extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -749,6 +846,7 @@ export interface ApiFoundationYearPageFoundationYearPage
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     testimonial_section: Schema.Attribute.Component<
       'shared.testimonials',
       false
@@ -826,6 +924,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     statistics_section: Schema.Attribute.Component<
       'shared.statistics-section',
       false
@@ -834,6 +933,35 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     workforce_section: Schema.Attribute.Component<'shared.hero-section', false>;
+  };
+}
+
+export interface ApiInternalUrlInternalUrl extends Struct.CollectionTypeSchema {
+  collectionName: 'internal_urls';
+  info: {
+    displayName: 'Internal URL';
+    pluralName: 'internal-urls';
+    singularName: 'internal-url';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::internal-url.internal-url'
+    > &
+      Schema.Attribute.Private;
+    path_name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -873,6 +1001,7 @@ export interface ApiInternsPageInternsPage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -918,6 +1047,7 @@ export interface ApiLeadershipPageLeadershipPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -928,7 +1058,7 @@ export interface ApiLinkLink extends Struct.CollectionTypeSchema {
   collectionName: 'links';
   info: {
     description: '';
-    displayName: 'link';
+    displayName: 'VideoLinks';
     pluralName: 'links';
     singularName: 'link';
   };
@@ -1013,6 +1143,7 @@ export interface ApiNewsNews extends Struct.CollectionTypeSchema {
 export interface ApiObjectiveObjective extends Struct.CollectionTypeSchema {
   collectionName: 'objectives';
   info: {
+    description: '';
     displayName: 'Objective';
     pluralName: 'objectives';
     singularName: 'objective';
@@ -1025,6 +1156,7 @@ export interface ApiObjectiveObjective extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    icon_image: Schema.Attribute.Component<'shared.image', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1074,6 +1206,7 @@ export interface ApiPartnerPagePartnerPage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo_content: Schema.Attribute.Component<'shared.seo-content', false>;
     talents_testimonial: Schema.Attribute.Component<
       'shared.testimonials',
       false
@@ -1661,6 +1794,8 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::activities-page.activities-page': ApiActivitiesPageActivitiesPage;
+      'api::app-header.app-header': ApiAppHeaderAppHeader;
+      'api::career.career': ApiCareerCareer;
       'api::champions-page.champions-page': ApiChampionsPageChampionsPage;
       'api::common.common': ApiCommonCommon;
       'api::contact-us-page.contact-us-page': ApiContactUsPageContactUsPage;
@@ -1670,6 +1805,7 @@ declare module '@strapi/strapi' {
       'api::foundation-year-page.foundation-year-page': ApiFoundationYearPageFoundationYearPage;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::internal-url.internal-url': ApiInternalUrlInternalUrl;
       'api::interns-page.interns-page': ApiInternsPageInternsPage;
       'api::leadership-page.leadership-page': ApiLeadershipPageLeadershipPage;
       'api::link.link': ApiLinkLink;

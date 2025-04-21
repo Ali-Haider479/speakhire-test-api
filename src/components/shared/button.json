@@ -10,11 +10,16 @@
     "inner_text": {
       "type": "string"
     },
-    "url": {
+    "external_url": {
       "type": "string"
     },
     "type_form_id": {
       "type": "string"
+    },
+    "internal_url": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::internal-url.internal-url"
     }
   }
 }

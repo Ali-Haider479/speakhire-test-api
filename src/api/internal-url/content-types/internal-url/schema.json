@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "internal_urls",
+  "info": {
+    "singularName": "internal-url",
+    "pluralName": "internal-urls",
+    "displayName": "Internal URL"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "path_name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

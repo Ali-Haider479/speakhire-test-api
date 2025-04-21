@@ -5,7 +5,6 @@ export default [
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
-  'strapi::body',
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
@@ -15,11 +14,29 @@ export default [
       contentSecurityPolicy: {
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', process.env.AZURE_STORAGE_URL],
-          'media-src': ["'self'", 'data:', 'blob:', process.env.AZURE_STORAGE_URL],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            `https://${process.env.AZURE_STORAGE_ACCOUNT}.blob.core.windows.net`,
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            `https://${process.env.AZURE_STORAGE_ACCOUNT}.blob.core.windows.net`,
+          ],
           upgradeInsecureRequests: null,
         },
       },
+    },
+  },
+  {
+    name: 'strapi::body',
+    config: {
+      formLimit: '100mb',
+      jsonLimit: '100mb',
+      textLimit: '100mb',
     },
   },
 ];

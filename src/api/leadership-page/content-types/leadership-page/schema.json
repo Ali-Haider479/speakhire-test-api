@@ -32,6 +32,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.career-facilitators"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

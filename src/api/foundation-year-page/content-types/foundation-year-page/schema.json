@@ -45,6 +45,11 @@
     },
     "partner_interest_form_id": {
       "type": "string"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

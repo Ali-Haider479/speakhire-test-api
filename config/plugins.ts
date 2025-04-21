@@ -20,22 +20,23 @@ module.exports = (env) => ({
 
   upload: {
     config: {
-      provider: "strapi-provider-upload-azure-storage",
+      provider: 'strapi-provider-upload-azure-storage',
       providerOptions: {
         authType: 'default',
         account: process.env.AZURE_STORAGE_ACCOUNT,
         accountKey: process.env.AZURE_STORAGE_ACCOUNT_KEY,
-        serviceBaseURL: process.env.AZURE_STORAGE_URL || undefined,
+        serviceBaseURL: process.env.AZURE_STORAGE_URL,
         containerName: process.env.AZURE_STORAGE_CONTAINER_NAME,
-        defaultPath: "Assets",
-        cdnBaseURL: null
+        defaultPath: 'assets',
+        cdnBaseURL: null,
+        generateBlobSas: true,
+        sasExpiry: 315360000
       },
       actionOptions: {
         upload: {
-          // 👇 enables thumbnail generation
           responsiveDimensions: true,
         },
       },
     },
-  },
+  }
 });

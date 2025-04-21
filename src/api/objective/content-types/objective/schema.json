@@ -4,7 +4,8 @@
   "info": {
     "singularName": "objective",
     "pluralName": "objectives",
-    "displayName": "Objective"
+    "displayName": "Objective",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,11 @@
     },
     "description": {
       "type": "text"
+    },
+    "icon_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
     }
   }
 }

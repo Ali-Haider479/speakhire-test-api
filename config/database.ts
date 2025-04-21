@@ -1,6 +1,7 @@
 export default ({ env }) => {
   const client = process.env.DATABASE_CLIENT;
 
+  console.log("DB", process.env.AZURE_STORAGE_URL)
   const connections = {
     postgres: {
       connection: {

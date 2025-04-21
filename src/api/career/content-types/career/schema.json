@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "Career",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "long_description": {
+      "type": "text"
+    },
+    "qualifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcomes"
+    },
+    "doc_url": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "background": {
+      "type": "text"
+    },
+    "offered_salary": {
+      "type": "string"
+    },
+    "responsibilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcomes"
+    },
+    "eeo_statement": {
+      "type": "string"
+    },
+    "application_form_url": {
+      "type": "string"
+    }
+  }
+}

@@ -13,7 +13,7 @@
     "description": {
       "type": "string"
     },
-    "links": {
+    "video_links": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::link.link"

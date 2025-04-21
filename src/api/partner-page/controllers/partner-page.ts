@@ -34,7 +34,7 @@ export default factories.createCoreController(
                 populate:["buttons","partner_logos.source"]
             },
             partners_objective:{
-                populate:["objectives"]
+                populate:["objectives","objectives.icon_image.source"]
             },
             talents_testimonial:{
                 populate:["testimonials.cover_image.source"]

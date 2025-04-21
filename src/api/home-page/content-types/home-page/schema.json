@@ -40,6 +40,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.hero-section"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

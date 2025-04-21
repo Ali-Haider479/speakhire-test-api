@@ -22,6 +22,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.speakers-impact"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

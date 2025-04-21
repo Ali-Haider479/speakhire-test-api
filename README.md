@@ -33,3 +33,10 @@ Before you begin, ensure you have met the following requirements:
 - Yarn package manager
 - PostgreSQL database (v12 or higher recommended)
 - Strapi CLI (optional but recommended)
+
+
+## Deployment to docker hub
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 -t crspeakhire.azurecr.io/speakhire-cms:latest --push .
+```

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "first-step",
     "pluralName": "first-steps",
-    "displayName": "FirstStep"
+    "displayName": "FirstStep",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +24,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.image"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

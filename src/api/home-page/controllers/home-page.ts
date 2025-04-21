@@ -30,7 +30,7 @@ export default factories.createCoreController(
               ],
             },
             impact_lives_section: {
-              populate: ["links"],
+              populate: ["video_links"],
             },
             partner_info_section:{
                 populate:['partner_logos','partner_logos.source']

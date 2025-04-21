@@ -18,7 +18,7 @@ export default factories.createCoreController(
         {
           populate: {
             objective_section: {
-              populate: ["objectives"],
+              populate: ["objectives","objectives.icon_image.source"],
             },
             become_partner_section: {
               populate: ["button", "cover_image", "cover_image.source"],

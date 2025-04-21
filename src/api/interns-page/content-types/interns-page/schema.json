@@ -36,6 +36,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.economic-mobility"
+    },
+    "seo_content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo-content"
     }
   }
 }

@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  strapi:
+    container_name: my-strapi-cms
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1337:1337" # host:container
+    env_file:
+      - .env
+    restart: always

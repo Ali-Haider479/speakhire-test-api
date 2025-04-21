@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "app_headers",
+  "info": {
+    "singularName": "app-header",
+    "pluralName": "app-headers",
+    "displayName": "AppHeader",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "header_buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button",
+      "max": 2
+    },
+    "header_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button",
+      "max": 3
+    },
+    "activities_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button"
+    },
+    "header_icon_buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-button",
+      "max": 2
+    }
+  }
+}

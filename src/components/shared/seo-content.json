@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_seo_contents",
+  "info": {
+    "displayName": "SEO_Content",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "string"
+    }
+  }
+}
